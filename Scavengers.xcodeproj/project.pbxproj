@@ -33,6 +33,8 @@
 		63626237188AD280004BC729 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626235188AD280004BC729 /* SuccessViewController.m */; };
 		63626238188AD280004BC729 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626236188AD280004BC729 /* SuccessViewController.xib */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
+		7AD81E3E188AE5540032ACAB /* HuntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD81E3C188AE5540032ACAB /* HuntViewController.m */; };
+		7AD81E3F188AE5540032ACAB /* HuntViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD81E3D188AE5540032ACAB /* HuntViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,9 @@
 		63626234188AD280004BC729 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
 		63626235188AD280004BC729 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		63626236188AD280004BC729 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
+		7AD81E3B188AE5540032ACAB /* HuntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntViewController.h; sourceTree = "<group>"; };
+		7AD81E3C188AE5540032ACAB /* HuntViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntViewController.m; sourceTree = "<group>"; };
+		7AD81E3D188AE5540032ACAB /* HuntViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HuntViewController.xib; sourceTree = "<group>"; };
 		AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +154,7 @@
 		635448BC188A2DA0006C6E06 /* Scavengers */ = {
 			isa = PBXGroup;
 			children = (
+				7AD81E40188AE55C0032ACAB /* Hunt */,
 				635448C5188A2DA0006C6E06 /* AppDelegate.h */,
 				635448C6188A2DA0006C6E06 /* AppDelegate.m */,
 				63626233188AD254004BC729 /* Success */,
@@ -251,6 +257,17 @@
 			name = Success;
 			sourceTree = "<group>";
 		};
+		7AD81E40188AE55C0032ACAB /* Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				7AD81E3B188AE5540032ACAB /* HuntViewController.h */,
+				7AD81E3C188AE5540032ACAB /* HuntViewController.m */,
+				7AD81E3D188AE5540032ACAB /* HuntViewController.xib */,
+			);
+			name = Hunt;
+			path = ..;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,6 +350,7 @@
 				635448C9188A2DA0006C6E06 /* Images.xcassets in Resources */,
 				63626229188A6F8F004BC729 /* MenuViewController.xib in Resources */,
 				63626230188A701D004BC729 /* MenuTableCell.xib in Resources */,
+				7AD81E3F188AE5540032ACAB /* HuntViewController.xib in Resources */,
 				635448EB188A360B006C6E06 /* WelcomeViewController.xib in Resources */,
 				63626232188A7D1F004BC729 /* QuizViewController.xib in Resources */,
 			);
@@ -388,6 +406,7 @@
 			files = (
 				635448C7188A2DA0006C6E06 /* AppDelegate.m in Sources */,
 				63626228188A6F8F004BC729 /* MenuViewController.m in Sources */,
+				7AD81E3E188AE5540032ACAB /* HuntViewController.m in Sources */,
 				63626237188AD280004BC729 /* SuccessViewController.m in Sources */,
 				63626222188A6AF0004BC729 /* QuizViewController.m in Sources */,
 				6362621B188A4A18004BC729 /* LocationTracker.m in Sources */,
