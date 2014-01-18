@@ -16,6 +16,8 @@
 @property (nonatomic, strong) QuizViewController *quizController;
 @property (nonatomic, strong) HuntViewController *huntController;
 
+- (void)answerQuestion:(NSString *)answer;
+
 
 
 - (void)pickHunt:(NSString *)identifier;

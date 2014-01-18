@@ -8,6 +8,8 @@
 
 #import "QuizViewController.h"
 #import <UIImageView+AFNetworking.h>
+#import "AppDelegate.h"
+#import "LocationTracker.h"
 
 @interface QuizViewController () <UITextFieldDelegate>
 
@@ -31,13 +33,19 @@
     return self;
 }
 
+- (void)refresh
+{
+    _question.text = _questionText;
+    NSURL *imageURL = [NSURL URLWithString:_imageUrl];
+    DLog(@"text: %@", _questionText);
+    [_image setImageWithURL:imageURL];
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _question.text = _questionText;
-    NSURL *imageURL = [NSURL URLWithString:_imageUrl];
-    
-    [_image setImageWithURL:imageURL];
+    [self refresh];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
@@ -55,6 +63,12 @@
 {
     // Test Answer!
     
+    
+    
+    AppDelegate *del = [UIApplication sharedApplication].delegate;
+    LocationTracker *locationTracker = del.locationTracker;
+    [locationTracker answerQuestion:textField.text];
+    
     return YES;
 }
 
@@ -65,7 +79,10 @@
 
 - (void)setQuestion:(NSString *)question imagePath:(NSString *)imagePath
 {
-    
+    DLog(@"Here");
+    _questionText = question;
+    _imageUrl = imagePath;
+    [self refresh];
 }
 
 
