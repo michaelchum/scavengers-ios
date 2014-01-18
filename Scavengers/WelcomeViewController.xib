@@ -16,17 +16,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="foN-ut-9fo" customClass="FBLoginView">
-                    <rect key="frame" x="35" y="229" width="250" height="50"/>
+                    <rect key="frame" x="35" y="312" width="250" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="1jo-NM-48W"/>
                     </connections>
                 </view>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="welcome2" translatesAutoresizingMaskIntoConstraints="NO" id="nfy-Tc-v7t">
+                    <rect key="frame" x="26" y="55" width="269" height="51"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="vMo-US-Eh4">
+                    <rect key="frame" x="96" y="148" width="128" height="128"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
+                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="pitch2" translatesAutoresizingMaskIntoConstraints="NO" id="Hyu-yg-aa1">
+                    <rect key="frame" x="64" y="429" width="193" height="45"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
+    <resources>
+        <image name="pitch2" width="193" height="45"/>
+        <image name="star" width="128" height="128"/>
+        <image name="welcome2" width="269" height="51"/>
+    </resources>
 </document>
