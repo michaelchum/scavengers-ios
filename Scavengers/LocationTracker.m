@@ -111,7 +111,8 @@ typedef NSInteger ModeType;
                 [_menuController.navigationController pushViewController:_quizController animated:NO];
                 _mode = ModeTypeHunt;
             }
-            NSString *distance = [responseObject objectForKey:@"distance"];
+            NSNumber *distance = [responseObject objectForKey:@"distance"];
+            DLog(@"Float: %@", distance);
             // TODO, send distance to setDistance on huntController
         } else if ([type isEqualToString:@"QUESTION"]) {
             if (_mode != ModeTypeQuiz) {
