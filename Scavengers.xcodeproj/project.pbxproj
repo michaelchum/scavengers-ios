@@ -24,6 +24,8 @@
 		635448EB188A360B006C6E06 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635448E9188A360B006C6E06 /* WelcomeViewController.xib */; };
 		6362621B188A4A18004BC729 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362621A188A4A18004BC729 /* LocationTracker.m */; };
 		6362621D188A517E004BC729 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6362621C188A517E004BC729 /* FacebookSDK.framework */; };
+		63626222188A6AF0004BC729 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626220188A6AF0004BC729 /* QuizViewController.m */; };
+		63626223188A6AF0004BC729 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626221188A6AF0004BC729 /* QuizViewController.xib */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +64,9 @@
 		63626219188A4A18004BC729 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
 		6362621A188A4A18004BC729 /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
 		6362621C188A517E004BC729 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		6362621F188A6AF0004BC729 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
+		63626220188A6AF0004BC729 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
+		63626221188A6AF0004BC729 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +136,8 @@
 			children = (
 				635448C5188A2DA0006C6E06 /* AppDelegate.h */,
 				635448C6188A2DA0006C6E06 /* AppDelegate.m */,
+				63626224188A6AFA004BC729 /* New Group */,
+				6362621E188A69BD004BC729 /* Quiz */,
 				63626215188A4930004BC729 /* LocationManager */,
 				63626214188A4923004BC729 /* Welcome */,
 				635448C8188A2DA0006C6E06 /* Images.xcassets */,
@@ -185,6 +192,23 @@
 				6362621A188A4A18004BC729 /* LocationTracker.m */,
 			);
 			name = LocationManager;
+			sourceTree = "<group>";
+		};
+		6362621E188A69BD004BC729 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				6362621F188A6AF0004BC729 /* QuizViewController.h */,
+				63626220188A6AF0004BC729 /* QuizViewController.m */,
+				63626221188A6AF0004BC729 /* QuizViewController.xib */,
+			);
+			name = Quiz;
+			sourceTree = "<group>";
+		};
+		63626224188A6AFA004BC729 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +291,7 @@
 				635448C1188A2DA0006C6E06 /* InfoPlist.strings in Resources */,
 				635448C9188A2DA0006C6E06 /* Images.xcassets in Resources */,
 				635448EB188A360B006C6E06 /* WelcomeViewController.xib in Resources */,
+				63626223188A6AF0004BC729 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635448C7188A2DA0006C6E06 /* AppDelegate.m in Sources */,
+				63626222188A6AF0004BC729 /* QuizViewController.m in Sources */,
 				6362621B188A4A18004BC729 /* LocationTracker.m in Sources */,
 				635448C3188A2DA0006C6E06 /* main.m in Sources */,
 				635448EA188A360B006C6E06 /* WelcomeViewController.m in Sources */,

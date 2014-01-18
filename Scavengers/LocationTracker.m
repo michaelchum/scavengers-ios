@@ -59,7 +59,6 @@
 //    [_locations addObjectsFromArray:locations];
 //    CLLocation *location = [self getLatestLocation];
     CLLocation *location = [locations lastObject];
-    DLog(@"Here, location: %@", location);
 
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -78,6 +77,8 @@
     NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/location"];
     [_reqManager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Here %@", responseObject);
+        NSNumber *distance = [responseObject objectForKey:@"distance"];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failed with error: %@", error);
     }];
