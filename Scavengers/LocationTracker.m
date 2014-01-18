@@ -13,8 +13,7 @@
 @interface LocationTracker () <CLLocationManagerDelegate>
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-@property (nonatomic, strong) NSMutableArray *locations;
-@property (nonatomic, strong) NSTimer *timer;
+//@property (nonatomic, strong) NSMutableArray *locations;
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *reqManager;
 
@@ -28,19 +27,18 @@
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDelegate:self];
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-        _locations = [[NSMutableArray alloc] init];
+//        _locations = [[NSMutableArray alloc] init];
         _reqManager = [AFHTTPRequestOperationManager manager];
         _reqManager.responseSerializer = [AFJSONResponseSerializer serializer];
 
-        [self playTracking];
     }
     return self;
 }
 
-- (CLLocation *)getLatestLocation
-{
-    return [_locations lastObject];
-}
+//- (CLLocation *)getLatestLocation
+//{
+//    return [_locations lastObject];
+//}
 
 - (void)pauseTracking
 {
@@ -54,15 +52,18 @@
 
 - (void)locationManager:(CLLocationManager *)clmanager didUpdateLocations:(NSArray *)locations
 {
-    if (_username == nil) {
+    if (_username == nil || locations == nil) {
         return;
     }
-    [_locations addObjectsFromArray:locations];
-    CLLocation *location = [self getLatestLocation];
     
+//    [_locations addObjectsFromArray:locations];
+//    CLLocation *location = [self getLatestLocation];
+    CLLocation *location = [locations lastObject];
+    DLog(@"Here, location: %@", location);
+
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    
+
     [parameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"latitude"];
     [parameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"longitude"];
     
@@ -74,9 +75,9 @@
     [parameters setObject:time forKey:@"time"];
     
 
-    NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/location/"];
+    NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/location"];
     [_reqManager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Here");
+        NSLog(@"Here %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Failed with error: %@", error);
     }];

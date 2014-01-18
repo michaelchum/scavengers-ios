@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 @interface LocationTracker : NSObject
 
-- (CLLocation *)getLatestLocation;
+//- (CLLocation *)getLatestLocation;
 - (void)playTracking;
 - (void)pauseTracking;
 

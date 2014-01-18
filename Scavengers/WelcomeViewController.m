@@ -40,6 +40,8 @@
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
     LocationTracker *locationTracker = ((AppDelegate *)[UIApplication sharedApplication].delegate).locationTracker;
+    _username = user.username;
+    DLog(@"Here w username: %@", _username);
     locationTracker.username = _username;
     [locationTracker playTracking];
 }
