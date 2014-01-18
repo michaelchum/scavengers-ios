@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HuntViewController">
             <connections>
-                <outlet property="distanceFromTarget" destination="yWz-kk-pvW" id="qyq-TS-xBF"/>
+                <outlet property="distanceFromTarget" destination="yWz-kk-pvW" id="7dH-dO-82p"/>
                 <outlet property="infoFromTarget" destination="URq-jy-U11" id="xij-08-IJ4"/>
                 <outlet property="instructionsFromTarget" destination="Sfq-0j-h0Y" id="4GH-99-Ler"/>
                 <outlet property="unitsFromTarget" destination="GOW-Zh-iPc" id="Mwo-EV-6uk"/>

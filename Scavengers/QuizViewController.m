@@ -63,7 +63,10 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-
+- (void)setQuestion:(NSString *)question imagePath:(NSString *)imagePath
+{
+    
+}
 
 
 

@@ -15,25 +15,36 @@
 @property (weak, nonatomic) IBOutlet UILabel *unitsFromTarget;
 @property (weak, nonatomic) IBOutlet UILabel *infoFromTarget;
 
+@property (nonatomic, strong) NSNumber *distance;
+@property (nonatomic, strong) NSNumber *oldDistance;
+
+
 @end
 
 @implementation HuntViewController
 
 - (void)setDistance:(NSNumber *)distance
 {
-    NSNumber *previousDistance = _distance;
+    _oldDistance = _distance;
+    _distance = [NSNumber numberWithFloat: [distance floatValue]*1000];
+    [self refreshFields];
+}
 
-    float previousDistanceFloat = [previousDistance floatValue]*1000;
-    float distanceFloat = [distance floatValue]*1000;
-    float difference = (previousDistanceFloat - distanceFloat)*1000;
+- (void)refreshFields
+{
+    NSNumber *previousDistance = _oldDistance;
+    NSNumber *distance = _distance;
     
-    _distance = [NSNumber numberWithFloat:[distance floatValue]*1000]; // Update property
+    float previousDistanceFloat = [previousDistance floatValue];
+    float distanceFloat = [distance floatValue];
+    float difference = (previousDistanceFloat - distanceFloat);
+    
     
     NSString *status;
     if (difference < 0) {
         [NSString stringWithFormat:@"Woops! Wrong way!"];
     } else if (distanceFloat > 50) {
-        status = [NSString stringWithFormat:@"You're on good track,\nkeep going"];
+        status = [NSString stringWithFormat:@"You're on the right track,\nkeep going"];
     } else if (distanceFloat > 40) {
         status = [NSString stringWithFormat:@"You're getting closer"];
     } else if (distanceFloat > 30) {
@@ -49,8 +60,11 @@
     // Update labels
     self.unitsFromTarget.text = @"meters";
     self.infoFromTarget.text = status;
-    self.distanceFromTarget.text = [_distance stringValue];
+    DLog(@"distance: %d", [_distance integerValue]);
+    
+    _distanceFromTarget.text = [NSString stringWithFormat:@"%d", [_distance intValue] ];
 }
+
 
 - (void)setWin:(BOOL)win
 {
@@ -70,9 +84,11 @@
 
 - (void)viewDidLoad
 {
-    self.win = FALSE;
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.win = FALSE;
+    [self refreshFields];
+
 }
 
 

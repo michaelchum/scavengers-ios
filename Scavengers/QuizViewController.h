@@ -10,4 +10,6 @@
 
 @interface QuizViewController : UIViewController
 
+- (void)setQuestion:(NSString *)question imagePath:(NSString *)imagePath;
+
 @end

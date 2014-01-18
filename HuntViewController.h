@@ -11,6 +11,6 @@
 @interface HuntViewController : UIViewController
 
 @property (nonatomic) BOOL win;
-@property (strong, nonatomic) NSNumber *distance;
+- (void)setDistance:(NSNumber *)distance;
 
 @end
