@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import "WelcomeViewController.h"
+#import "LocationTracker.h"
 
 @implementation AppDelegate
 
@@ -24,6 +25,8 @@
     self.window.rootViewController = navigationController;
     navigationController.navigationBarHidden = YES;
     navigationController.toolbarHidden = YES;
+    
+    _locationTracker = [[LocationTracker alloc] init];
     
 
     self.window.backgroundColor = [UIColor whiteColor];

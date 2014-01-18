@@ -8,7 +8,8 @@
 
 #import "WelcomeViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import <AFNetworking.h>
+#import "AppDelegate.h"
+#import "LocationTracker.h"
 
 @interface WelcomeViewController () <FBLoginViewDelegate>
 
@@ -38,31 +39,9 @@
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
-    
-    
-//    LocationTracker *locationTracker = ((AppDelegate *)[UIApplication sharedApplication].delegate).locationTracker;
-//    CLLocation *location = [locationTracker getLatestLocation];
-    
-    
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    
-//    [parameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"latitude"];
-//    [parameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"longitude"];
-    
-    
-    
-    [parameters setObject:_username forKey:@"username"];
-    
-    
-    
-    NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/location/"];
-    [manager POST:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+    LocationTracker *locationTracker = ((AppDelegate *)[UIApplication sharedApplication].delegate).locationTracker;
+    locationTracker.username = _username;
+    [locationTracker playTracking];
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView {

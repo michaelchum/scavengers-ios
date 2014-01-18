@@ -22,8 +22,8 @@
 		635448E6188A2E11006C6E06 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635448E5188A2E11006C6E06 /* CoreLocation.framework */; };
 		635448EA188A360B006C6E06 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635448E8188A360B006C6E06 /* WelcomeViewController.m */; };
 		635448EB188A360B006C6E06 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635448E9188A360B006C6E06 /* WelcomeViewController.xib */; };
-		635448ED188A362F006C6E06 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635448EC188A362F006C6E06 /* FacebookSDK.framework */; };
 		6362621B188A4A18004BC729 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362621A188A4A18004BC729 /* LocationTracker.m */; };
+		6362621D188A517E004BC729 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6362621C188A517E004BC729 /* FacebookSDK.framework */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -59,9 +59,9 @@
 		635448E7188A360B006C6E06 /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		635448E8188A360B006C6E06 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		635448E9188A360B006C6E06 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
-		635448EC188A362F006C6E06 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
 		63626219188A4A18004BC729 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
 		6362621A188A4A18004BC729 /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
+		6362621C188A517E004BC729 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,11 +71,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				635448E6188A2E11006C6E06 /* CoreLocation.framework in Frameworks */,
-				635448ED188A362F006C6E06 /* FacebookSDK.framework in Frameworks */,
 				635448B9188A2DA0006C6E06 /* CoreGraphics.framework in Frameworks */,
 				635448BB188A2DA0006C6E06 /* UIKit.framework in Frameworks */,
 				635448B7188A2DA0006C6E06 /* Foundation.framework in Frameworks */,
 				7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */,
+				6362621D188A517E004BC729 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 		635448B5188A2DA0006C6E06 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				635448EC188A362F006C6E06 /* FacebookSDK.framework */,
+				6362621C188A517E004BC729 /* FacebookSDK.framework */,
 				635448E5188A2E11006C6E06 /* CoreLocation.framework */,
 				635448B6188A2DA0006C6E06 /* Foundation.framework */,
 				635448B8188A2DA0006C6E06 /* CoreGraphics.framework */,
@@ -444,6 +444,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/david/Documents/FacebookSDK,
+					/Users/david/Documents/Scavengers,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scavengers/Scavengers-Prefix.pch";
@@ -462,6 +463,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/david/Documents/FacebookSDK,
+					/Users/david/Documents/Scavengers,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scavengers/Scavengers-Prefix.pch";

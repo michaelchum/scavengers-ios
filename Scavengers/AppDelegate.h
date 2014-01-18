@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class LocationTracker;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (nonatomic, strong) LocationTracker *locationTracker;
 
 @end

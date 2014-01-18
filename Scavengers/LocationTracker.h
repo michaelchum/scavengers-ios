@@ -11,9 +11,11 @@
 @interface LocationTracker : NSObject
 
 - (CLLocation *)getLatestLocation;
-- (void)stopTrackingLoop;
-- (void)startTrackingLoop;
+- (void)playTracking;
+- (void)pauseTracking;
 
 @property (nonatomic, assign) BOOL isTracking;
+
+@property (nonatomic, copy) NSString *username;
 
 @end
