@@ -10,15 +10,13 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import "AppDelegate.h"
 #import "LocationTracker.h"
-
-#import "MenuViewController.h"
+#import "SuccessViewController.h"
 
 @interface WelcomeViewController () <FBLoginViewDelegate>
 
 @property (nonatomic, copy) NSString *username;
 @property (weak, nonatomic) IBOutlet FBLoginView *LoginView;
 
-@property (nonatomic, strong) MenuViewController *menuController;
 
 
 
@@ -31,7 +29,6 @@
     self = [super initWithNibName:@"WelcomeViewController" bundle:nil];
     if (self) {
         // Custom initialization
-        _menuController = [[MenuViewController alloc] init];
     }
     return self;
 }
@@ -41,8 +38,6 @@
     [super viewDidLoad];
     
 }
-
-
 
 - (void)loginViewFetchedUserInfo:(FBLoginView *)loginView
                             user:(id<FBGraphUser>)user {
@@ -56,10 +51,13 @@
         locationTracker.username = _username;
         [locationTracker playTracking];
         
-        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:_menuController];
+//        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:locationTracker.menuController];
+//        [del.window setRootViewController:navigation];
+        if (locationTracker.successController == nil) {
+            locationTracker.successController = [[SuccessViewController alloc] init];
+        }
+        [self.navigationController pushViewController:locationTracker.successController animated:NO];
         
-        [del.window setRootViewController:navigation];
-        //[self.navigationController pushViewController:_menuController animated:YES];
     }
 }
 

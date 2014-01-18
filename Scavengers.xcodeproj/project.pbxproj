@@ -30,6 +30,8 @@
 		6362622E188A7006004BC729 /* MenuTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362622D188A7006004BC729 /* MenuTableCell.m */; };
 		63626230188A701D004BC729 /* MenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6362622F188A701D004BC729 /* MenuTableCell.xib */; };
 		63626232188A7D1F004BC729 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626231188A7D1F004BC729 /* QuizViewController.xib */; };
+		63626237188AD280004BC729 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626235188AD280004BC729 /* SuccessViewController.m */; };
+		63626238188AD280004BC729 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626236188AD280004BC729 /* SuccessViewController.xib */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +79,9 @@
 		6362622D188A7006004BC729 /* MenuTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableCell.m; sourceTree = "<group>"; };
 		6362622F188A701D004BC729 /* MenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableCell.xib; sourceTree = "<group>"; };
 		63626231188A7D1F004BC729 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		63626234188AD280004BC729 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
+		63626235188AD280004BC729 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
+		63626236188AD280004BC729 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
 		AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +151,7 @@
 			children = (
 				635448C5188A2DA0006C6E06 /* AppDelegate.h */,
 				635448C6188A2DA0006C6E06 /* AppDelegate.m */,
+				63626233188AD254004BC729 /* Success */,
 				63626215188A4930004BC729 /* LocationManager */,
 				63626214188A4923004BC729 /* Welcome */,
 				63626224188A6AFA004BC729 /* Menu */,
@@ -235,6 +241,16 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		63626233188AD254004BC729 /* Success */ = {
+			isa = PBXGroup;
+			children = (
+				63626234188AD280004BC729 /* SuccessViewController.h */,
+				63626235188AD280004BC729 /* SuccessViewController.m */,
+				63626236188AD280004BC729 /* SuccessViewController.xib */,
+			);
+			name = Success;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -313,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				635448C1188A2DA0006C6E06 /* InfoPlist.strings in Resources */,
+				63626238188AD280004BC729 /* SuccessViewController.xib in Resources */,
 				635448C9188A2DA0006C6E06 /* Images.xcassets in Resources */,
 				63626229188A6F8F004BC729 /* MenuViewController.xib in Resources */,
 				63626230188A701D004BC729 /* MenuTableCell.xib in Resources */,
@@ -371,6 +388,7 @@
 			files = (
 				635448C7188A2DA0006C6E06 /* AppDelegate.m in Sources */,
 				63626228188A6F8F004BC729 /* MenuViewController.m in Sources */,
+				63626237188AD280004BC729 /* SuccessViewController.m in Sources */,
 				63626222188A6AF0004BC729 /* QuizViewController.m in Sources */,
 				6362621B188A4A18004BC729 /* LocationTracker.m in Sources */,
 				635448C3188A2DA0006C6E06 /* main.m in Sources */,

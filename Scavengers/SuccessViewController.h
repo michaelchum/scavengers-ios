@@ -1,5 +1,5 @@
 //
-//  MenuViewController.h
+//  SuccessViewController.h
 //  Scavengers
 //
 //  Created by David Cottrell on 1/18/2014.
@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
-@interface MenuViewController : UIViewController
-
-- (void)setPicks:(NSArray *)picks;
+@interface SuccessViewController : UIViewController
 
 @end
