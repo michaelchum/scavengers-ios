@@ -23,7 +23,7 @@
 		635448EA188A360B006C6E06 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 635448E8188A360B006C6E06 /* WelcomeViewController.m */; };
 		635448EB188A360B006C6E06 /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 635448E9188A360B006C6E06 /* WelcomeViewController.xib */; };
 		635448ED188A362F006C6E06 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635448EC188A362F006C6E06 /* FacebookSDK.framework */; };
-		63626218188A4981004BC729 /* LocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626217188A4981004BC729 /* LocationManager.m */; };
+		6362621B188A4A18004BC729 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362621A188A4A18004BC729 /* LocationTracker.m */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -60,8 +60,8 @@
 		635448E8188A360B006C6E06 /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		635448E9188A360B006C6E06 /* WelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
 		635448EC188A362F006C6E06 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../FacebookSDK/FacebookSDK.framework; sourceTree = "<group>"; };
-		63626216188A4981004BC729 /* LocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
-		63626217188A4981004BC729 /* LocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationManager.m; sourceTree = "<group>"; };
+		63626219188A4A18004BC729 /* LocationTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTracker.h; sourceTree = "<group>"; };
+		6362621A188A4A18004BC729 /* LocationTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTracker.m; sourceTree = "<group>"; };
 		AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -70,8 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				635448ED188A362F006C6E06 /* FacebookSDK.framework in Frameworks */,
 				635448E6188A2E11006C6E06 /* CoreLocation.framework in Frameworks */,
+				635448ED188A362F006C6E06 /* FacebookSDK.framework in Frameworks */,
 				635448B9188A2DA0006C6E06 /* CoreGraphics.framework in Frameworks */,
 				635448BB188A2DA0006C6E06 /* UIKit.framework in Frameworks */,
 				635448B7188A2DA0006C6E06 /* Foundation.framework in Frameworks */,
@@ -181,8 +181,8 @@
 		63626215188A4930004BC729 /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				63626216188A4981004BC729 /* LocationManager.h */,
-				63626217188A4981004BC729 /* LocationManager.m */,
+				63626219188A4A18004BC729 /* LocationTracker.h */,
+				6362621A188A4A18004BC729 /* LocationTracker.m */,
 			);
 			name = LocationManager;
 			sourceTree = "<group>";
@@ -318,8 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63626218188A4981004BC729 /* LocationManager.m in Sources */,
 				635448C7188A2DA0006C6E06 /* AppDelegate.m in Sources */,
+				6362621B188A4A18004BC729 /* LocationTracker.m in Sources */,
 				635448C3188A2DA0006C6E06 /* main.m in Sources */,
 				635448EA188A360B006C6E06 /* WelcomeViewController.m in Sources */,
 			);
