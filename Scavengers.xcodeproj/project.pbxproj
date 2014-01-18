@@ -25,11 +25,11 @@
 		6362621B188A4A18004BC729 /* LocationTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362621A188A4A18004BC729 /* LocationTracker.m */; };
 		6362621D188A517E004BC729 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6362621C188A517E004BC729 /* FacebookSDK.framework */; };
 		63626222188A6AF0004BC729 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626220188A6AF0004BC729 /* QuizViewController.m */; };
-		63626223188A6AF0004BC729 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626221188A6AF0004BC729 /* QuizViewController.xib */; };
 		63626228188A6F8F004BC729 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626226188A6F8F004BC729 /* MenuViewController.m */; };
 		63626229188A6F8F004BC729 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626227188A6F8F004BC729 /* MenuViewController.xib */; };
 		6362622E188A7006004BC729 /* MenuTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6362622D188A7006004BC729 /* MenuTableCell.m */; };
 		63626230188A701D004BC729 /* MenuTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6362622F188A701D004BC729 /* MenuTableCell.xib */; };
+		63626232188A7D1F004BC729 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626231188A7D1F004BC729 /* QuizViewController.xib */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -70,13 +70,13 @@
 		6362621C188A517E004BC729 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		6362621F188A6AF0004BC729 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
 		63626220188A6AF0004BC729 /* QuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuizViewController.m; sourceTree = "<group>"; };
-		63626221188A6AF0004BC729 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		63626225188A6F8F004BC729 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		63626226188A6F8F004BC729 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		63626227188A6F8F004BC729 /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		6362622C188A7006004BC729 /* MenuTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableCell.h; sourceTree = "<group>"; };
 		6362622D188A7006004BC729 /* MenuTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableCell.m; sourceTree = "<group>"; };
 		6362622F188A701D004BC729 /* MenuTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuTableCell.xib; sourceTree = "<group>"; };
+		63626231188A7D1F004BC729 /* QuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
 		AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,10 +146,10 @@
 			children = (
 				635448C5188A2DA0006C6E06 /* AppDelegate.h */,
 				635448C6188A2DA0006C6E06 /* AppDelegate.m */,
-				63626224188A6AFA004BC729 /* New Group */,
-				6362621E188A69BD004BC729 /* Quiz */,
 				63626215188A4930004BC729 /* LocationManager */,
 				63626214188A4923004BC729 /* Welcome */,
+				63626224188A6AFA004BC729 /* Menu */,
+				6362621E188A69BD004BC729 /* Quiz */,
 				635448C8188A2DA0006C6E06 /* Images.xcassets */,
 				635448BD188A2DA0006C6E06 /* Supporting Files */,
 			);
@@ -209,12 +209,12 @@
 			children = (
 				6362621F188A6AF0004BC729 /* QuizViewController.h */,
 				63626220188A6AF0004BC729 /* QuizViewController.m */,
-				63626221188A6AF0004BC729 /* QuizViewController.xib */,
+				63626231188A7D1F004BC729 /* QuizViewController.xib */,
 			);
 			name = Quiz;
 			sourceTree = "<group>";
 		};
-		63626224188A6AFA004BC729 /* New Group */ = {
+		63626224188A6AFA004BC729 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
 				63626225188A6F8F004BC729 /* MenuViewController.h */,
@@ -222,7 +222,7 @@
 				63626227188A6F8F004BC729 /* MenuViewController.xib */,
 				6362622B188A6FA2004BC729 /* Cells */,
 			);
-			name = "New Group";
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		6362622B188A6FA2004BC729 /* Cells */ = {
@@ -317,7 +317,7 @@
 				63626229188A6F8F004BC729 /* MenuViewController.xib in Resources */,
 				63626230188A701D004BC729 /* MenuTableCell.xib in Resources */,
 				635448EB188A360B006C6E06 /* WelcomeViewController.xib in Resources */,
-				63626223188A6AF0004BC729 /* QuizViewController.xib in Resources */,
+				63626232188A7D1F004BC729 /* QuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,8 +497,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/david/Documents/FacebookSDK,
-					/Users/david/Documents/Scavengers,
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Scavengers/Scavengers-Prefix.pch";

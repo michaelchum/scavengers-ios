@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *reqManager;
 
+@property (nonatomic, strong) NSNumber *lastTimeUploaded;
 @end
 @implementation LocationTracker
 
@@ -27,18 +28,14 @@
         _locationManager = [[CLLocationManager alloc] init];
         [_locationManager setDelegate:self];
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
-//        _locations = [[NSMutableArray alloc] init];
         _reqManager = [AFHTTPRequestOperationManager manager];
         _reqManager.responseSerializer = [AFJSONResponseSerializer serializer];
+        _reqManager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
 
+        _lastTimeUploaded = [NSNumber numberWithDouble:0.0];
     }
     return self;
 }
-
-//- (CLLocation *)getLatestLocation
-//{
-//    return [_locations lastObject];
-//}
 
 - (void)pauseTracking
 {
@@ -52,12 +49,16 @@
 
 - (void)locationManager:(CLLocationManager *)clmanager didUpdateLocations:(NSArray *)locations
 {
+    
     if (_username == nil || locations == nil) {
         return;
     }
+    NSNumber *time = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
+    if ([_lastTimeUploaded doubleValue] + 5.0 > [time doubleValue]) {
+        return;
+    }
+    _lastTimeUploaded = time;
     
-//    [_locations addObjectsFromArray:locations];
-//    CLLocation *location = [self getLatestLocation];
     CLLocation *location = [locations lastObject];
 
     
@@ -68,19 +69,24 @@
     
     [parameters setObject:_username forKey:@"username"];
     
-    NSNumber *time = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
-    
-    
     [parameters setObject:time forKey:@"time"];
     
-
+    
     NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/location"];
     [_reqManager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Here %@", responseObject);
+        DLog(@"Here %@", responseObject);
+        NSString *type = [responseObject objectForKey:@"type"];
+        if ([type isEqualToString:@"PICK"]) {
+            NSMutableArray *picks = [[NSMutableArray alloc] init];
+//            for (NSDictionary *element in responseObject objectForKey:@"picks") {
+//                
+//            }
+        }
+        
         NSNumber *distance = [responseObject objectForKey:@"distance"];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failed with error: %@", error);
+        DLog(@"Failed with error: %@", error);
     }];
 }
 

@@ -7,16 +7,17 @@
 //
 
 #import "MenuViewController.h"
+#import "MenuTableCell.h"
 
-@interface MenuViewController ()
+@interface MenuViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @end
 
 @implementation MenuViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)initWithPicks:(NSArray *)picks
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"MenuViewController" bundle:nil];
     if (self) {
         // Custom initialization
     }
@@ -29,10 +30,31 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    return 1;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CoverCellIdentifier = @"MenuTableViewCell";
+    MenuTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CoverCellIdentifier];
+    if (cell == nil) {
+        cell = [[MenuTableCell alloc] initWithReuseIdentifier:CoverCellIdentifier];
+    }
+    
+    cell.name.text = @"Da best";
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
+
+
+
 
 @end

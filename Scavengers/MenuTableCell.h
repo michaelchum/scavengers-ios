@@ -10,6 +10,10 @@
 
 @interface MenuTableCell : UITableViewCell
 
+- (id)initWithReuseIdentifier:(NSString *)reuseIdentifier;
+
 @property (strong, nonatomic) IBOutlet UIView *content;
+@property (weak, nonatomic) IBOutlet UILabel *name;
+@property (weak, nonatomic) IBOutlet UILabel *description;
 
 @end

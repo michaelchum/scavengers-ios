@@ -7,7 +7,7 @@
 //
 
 #import "QuizViewController.h"
-#import <AFNetworking.h>
+#import <UIImageView+AFNetworking.h>
 
 @interface QuizViewController () <UITextFieldDelegate>
 
@@ -36,15 +36,35 @@
     [super viewDidLoad];
     _question.text = _questionText;
     NSURL *imageURL = [NSURL URLWithString:_imageUrl];
-    //[_image setImageWithURL:imageURL placeholderImage:[UIImage imageNamed:@"Empty"]];
-
-    // Do any additional setup after loading the view from its nib.
+    
+    [_image setImageWithURL:imageURL];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)dismissKeyboard
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [_answer resignFirstResponder];
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    // Test Answer!
+    
+    return YES;
+}
+
+- (IBAction)quit:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+
 
 @end
