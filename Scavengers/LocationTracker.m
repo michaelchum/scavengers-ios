@@ -11,6 +11,7 @@
 #import <AFNetworking.h>
 #import "SuccessViewController.h"
 #import "QuizViewController.h"
+#import "HuntViewController.h"
 
 // TODO
 enum {
@@ -48,6 +49,7 @@ typedef NSInteger ModeType;
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         
         _quizController = [[QuizViewController alloc] init];
+        _huntController = [[HuntViewController alloc] init];
         
         _mode = ModeTypePick;
         
@@ -108,10 +110,12 @@ typedef NSInteger ModeType;
             [_menuController setPicks:picks];
         } else if ([type isEqualToString:@"DISTANCE"]) {
             if (_mode != ModeTypeHunt) {
-                [_menuController.navigationController pushViewController:_quizController animated:NO];
+
+                [_menuController.navigationController pushViewController:_huntController animated:NO];
                 _mode = ModeTypeHunt;
             }
             NSNumber *distance = [responseObject objectForKey:@"distance"];
+            
             DLog(@"Float: %@", distance);
             // TODO, send distance to setDistance on huntController
         } else if ([type isEqualToString:@"QUESTION"]) {
@@ -126,6 +130,7 @@ typedef NSInteger ModeType;
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"Failed with error: %@", error);
     }];
+    
 }
 
 - (void)pickHunt:(NSString *)identifier

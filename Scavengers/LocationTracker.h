@@ -8,12 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
-@class MenuViewController, SuccessViewController, QuizViewController;
+@class MenuViewController, SuccessViewController, QuizViewController, HuntViewController;
 @interface LocationTracker : NSObject
 
 @property (nonatomic, strong) MenuViewController *menuController;
 @property (nonatomic, strong) SuccessViewController *successController;
 @property (nonatomic, strong) QuizViewController *quizController;
+@property (nonatomic, strong) HuntViewController *huntController;
+
 
 
 - (void)pickHunt:(NSString *)identifier;

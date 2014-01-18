@@ -154,9 +154,9 @@
 		635448BC188A2DA0006C6E06 /* Scavengers */ = {
 			isa = PBXGroup;
 			children = (
-				7AD81E40188AE55C0032ACAB /* Hunt */,
 				635448C5188A2DA0006C6E06 /* AppDelegate.h */,
 				635448C6188A2DA0006C6E06 /* AppDelegate.m */,
+				7AD81E40188AE55C0032ACAB /* Hunt */,
 				63626233188AD254004BC729 /* Success */,
 				63626215188A4930004BC729 /* LocationManager */,
 				63626214188A4923004BC729 /* Welcome */,

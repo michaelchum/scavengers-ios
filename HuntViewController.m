@@ -10,19 +10,24 @@
 
 @interface HuntViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *instructionsFromTarget;
+@property (weak, nonatomic) IBOutlet UILabel *distanceFromTarget;
+@property (weak, nonatomic) IBOutlet UILabel *unitsFromTarget;
+@property (weak, nonatomic) IBOutlet UILabel *infoFromTarget;
+
 @end
 
 @implementation HuntViewController
 
-- (void)setDistance:(NSString *)distance
+- (void)setDistance:(NSNumber *)distance
 {
-    NSString *previousDistance = _distance;
+    NSNumber *previousDistance = _distance;
 
     float previousDistanceFloat = [previousDistance floatValue]*1000;
     float distanceFloat = [distance floatValue]*1000;
     float difference = (previousDistanceFloat - distanceFloat)*1000;
     
-    _distance = [[NSNumber numberWithFloat:[distance floatValue]*1000] stringValue]; // Update property
+    _distance = [NSNumber numberWithFloat:[distance floatValue]*1000]; // Update property
     
     NSString *status;
     if (difference < 0) {
@@ -44,7 +49,7 @@
     // Update labels
     self.unitsFromTarget.text = @"meters";
     self.infoFromTarget.text = status;
-    self.distanceFromTarget.text = _distance;
+    self.distanceFromTarget.text = [_distance stringValue];
 }
 
 - (void)setWin:(BOOL)win
@@ -54,9 +59,9 @@
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (id)init
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    self = [super initWithNibName:@"HuntViewController" bundle:nil];
     if (self) {
         // Custom initialization
     }
@@ -70,10 +75,5 @@
     // Do any additional setup after loading the view from its nib.
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end

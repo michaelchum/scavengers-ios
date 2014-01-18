@@ -34,10 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    DLog(@"nc: %@ mc: %@", self.navigationController, _locationTracker.menuController);
     
-//    [self.navigationController popToRootViewControllerAnimated:YES];
     if (_locationTracker.menuController == nil) {
         _locationTracker.menuController = [[MenuViewController alloc] init];
     }

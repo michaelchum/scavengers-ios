@@ -9,10 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface HuntViewController : UIViewController
+
 @property (nonatomic) BOOL win;
-@property (strong, nonatomic) NSString *distance;
-@property (weak, nonatomic) IBOutlet UILabel *instructionsFromTarget;
-@property (weak, nonatomic) IBOutlet UILabel *distanceFromTarget;
-@property (weak, nonatomic) IBOutlet UILabel *unitsFromTarget;
-@property (weak, nonatomic) IBOutlet UILabel *infoFromTarget;
+@property (strong, nonatomic) NSNumber *distance;
+
 @end
