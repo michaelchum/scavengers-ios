@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import "MenuViewController.h"
+#import "WelcomeViewController.h"
 #import "LocationTracker.h"
 
 @implementation AppDelegate
@@ -19,8 +19,7 @@
     // Override point for customization after application launch.
     [FBLoginView class];
     
-    
-    MenuViewController *welcomeController = [[MenuViewController alloc] init];
+    WelcomeViewController *welcomeController = [[WelcomeViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:welcomeController];
     self.window.rootViewController = navigationController;
     navigationController.navigationBarHidden = YES;

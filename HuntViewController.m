@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *unitsFromTarget;
 @property (weak, nonatomic) IBOutlet UILabel *infoFromTarget;
 @property (weak, nonatomic) IBOutlet UILabel *goFromTarget;
+@property (weak, nonatomic) IBOutlet UILabel *moveTowardsTarget;
 
 
 @property (nonatomic, strong) NSNumber *distance;
@@ -43,35 +44,33 @@
     float distanceFloat = [distance floatValue];
     float difference = abs(previousDistanceFloat - distanceFloat);
     
-    
-    
     NSString *status;
     if (difference < 0) {
         [NSString stringWithFormat:@"Woops! Wrong way!"];
         [self setColor:[UIColor greenColor]];
-    } else if (distanceFloat > 50) {
+    } else if (distanceFloat > 80) {
         [self setColor:[UIColor greenColor]];
-        status = [NSString stringWithFormat:@"You're on the right track,\nkeep going"];
+        status = [NSString stringWithFormat:@"You're right on track"];
+    } else if (distanceFloat > 70) {
+        [self setColor:[UIColor yellowColor]];
+        status = [NSString stringWithFormat:@"You're getting closer"];
+    } else if (distanceFloat > 60) {
+        [self setColor:[UIColor yellowColor]];
+        status = [NSString stringWithFormat:@"Keep it up! You're very close"];
+    } else if (distanceFloat > 50) {
+        [self setColor:[UIColor orangeColor]];
+        status = [NSString stringWithFormat:@"You're sooo close"];
     } else if (distanceFloat > 40) {
         [self setColor:[UIColor orangeColor]];
-        status = [NSString stringWithFormat:@"You're getting closer"];
-    } else if (distanceFloat > 30) {
-        [self setColor:[UIColor orangeColor]];
-        status = [NSString stringWithFormat:@"Keep it up,\nyou're very close"];
-    } else if (distanceFloat > 20) {
-        [self setColor:[UIColor redColor]];
-        status = [NSString stringWithFormat:@"You're sooo close"];
-    } else if (distanceFloat > 10) {
-        [self setColor:[UIColor redColor]];
         status = [NSString stringWithFormat:@"It's right there!"];
-    } else if (distanceFloat > 5) {
+    } else if (distanceFloat > 30) {
         [self setColor:[UIColor redColor]];
         status = [NSString stringWithFormat:@"One more step!"];
     }
     
     // Update labels
     self.unitsFromTarget.text = @"meters";
-    self.infoFromTarget.text = status;
+    self.goFromTarget.text = status;
     DLog(@"distance: %d", [_distance integerValue]);
     
     _distanceFromTarget.text = [NSString stringWithFormat:@"%d", [_distance intValue] ];
@@ -110,12 +109,9 @@
     // Do any additional setup after loading the view from its nib.
     self.win = FALSE;
     [self refreshFields];
-    self.instructionsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:27];
     self.distanceFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:70];
     self.unitsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:31];
-    self.infoFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:21];
-    self.goFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:27];
-    
+    self.moveTowardsTarget.font = [UIFont fontWithName:@"Quake & Shake" size:21];
 }
 
 

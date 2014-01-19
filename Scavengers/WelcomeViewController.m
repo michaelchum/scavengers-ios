@@ -17,9 +17,6 @@
 @property (nonatomic, copy) NSString *username;
 @property (weak, nonatomic) IBOutlet FBLoginView *LoginView;
 
-
-
-
 @end
 
 @implementation WelcomeViewController
@@ -44,6 +41,22 @@
         {
             NSLog(@"  %@", name);
         }
+    }
+    
+    AppDelegate *del = [UIApplication sharedApplication].delegate;
+    LocationTracker *locationTracker = del.locationTracker;
+    
+    if (![locationTracker.username isEqualToString:@"alex"]) {
+        _username = @"alex";
+        DLog(@"Here w username: %@", _username);
+        locationTracker.username = _username;
+        [locationTracker playTracking];
+        
+        if (locationTracker.successController == nil) {
+            locationTracker.successController = [[SuccessViewController alloc] init];
+        }
+        [self.navigationController pushViewController:locationTracker.successController animated:NO];
+        
     }
     
 }

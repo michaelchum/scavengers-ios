@@ -62,6 +62,8 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    self.question.font = [UIFont fontWithName:@"Quake & Shake" size:18];
+    self.tryAgainLabel.font = [UIFont fontWithName:@"Quake & Shake" size:18];
 }
 
 - (void)dismissKeyboard
