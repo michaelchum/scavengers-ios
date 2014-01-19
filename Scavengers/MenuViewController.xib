@@ -25,7 +25,7 @@
                     </connections>
                 </tableView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="nearesthunt" translatesAutoresizingMaskIntoConstraints="NO" id="fdi-rg-ONP">
-                    <rect key="frame" x="18" y="20" width="285" height="22"/>
+                    <rect key="frame" x="18" y="33" width="285" height="22"/>
                     <autoresizingMask key="autoresizingMask"/>
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="coollogo_com-114213674" translatesAutoresizingMaskIntoConstraints="NO" id="4Gi-v7-OAf">

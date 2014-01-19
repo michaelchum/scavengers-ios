@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
-#import "WelcomeViewController.h"
+#import "MenuViewController.h"
 #import "LocationTracker.h"
 
 @implementation AppDelegate
@@ -20,7 +20,7 @@
     [FBLoginView class];
     
     
-    WelcomeViewController *welcomeController = [[WelcomeViewController alloc] init];
+    MenuViewController *welcomeController = [[MenuViewController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:welcomeController];
     self.window.rootViewController = navigationController;
     navigationController.navigationBarHidden = YES;

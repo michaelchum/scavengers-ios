@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceFromTarget;
 @property (weak, nonatomic) IBOutlet UILabel *unitsFromTarget;
 @property (weak, nonatomic) IBOutlet UILabel *infoFromTarget;
+@property (weak, nonatomic) IBOutlet UILabel *goFromTarget;
+
 
 @property (nonatomic, strong) NSNumber *distance;
 @property (nonatomic, strong) NSNumber *oldDistance;
@@ -108,10 +110,11 @@
     // Do any additional setup after loading the view from its nib.
     self.win = FALSE;
     [self refreshFields];
-    self.instructionsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:20];
-    self.distanceFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:20];
-    self.unitsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:20];
-    self.infoFromTarget.font = [UIFont fontWithName:@"Quake & Shake"];
+    self.instructionsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:27];
+    self.distanceFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:70];
+    self.unitsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:31];
+    self.infoFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:21];
+    self.goFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:27];
     
 }
 

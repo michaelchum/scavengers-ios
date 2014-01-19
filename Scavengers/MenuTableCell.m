@@ -21,6 +21,8 @@
                                     options:nil];
         [self addSubview:self.content];
     }
+    self.name.font = [UIFont fontWithName:@"Quake & Shake" size:17];
+    self.description.font = [UIFont fontWithName:@"Quake & Shake" size:15];
     return self;
 }
 

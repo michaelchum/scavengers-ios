@@ -8,8 +8,9 @@
             <connections>
                 <outlet property="colorBorder" destination="7Ue-89-gbU" id="V7r-oX-Tj7"/>
                 <outlet property="distanceFromTarget" destination="yWz-kk-pvW" id="7dH-dO-82p"/>
+                <outlet property="goFromTarget" destination="SGw-6f-BT7" id="Vc1-Lg-4eP"/>
                 <outlet property="infoFromTarget" destination="URq-jy-U11" id="xij-08-IJ4"/>
-                <outlet property="instructionsFromTarget" destination="Sfq-0j-h0Y" id="4GH-99-Ler"/>
+                <outlet property="instructionsFromTarget" destination="SGw-6f-BT7" id="JuO-oT-XlU"/>
                 <outlet property="unitsFromTarget" destination="GOW-Zh-iPc" id="Mwo-EV-6uk"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
@@ -31,7 +32,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yWz-kk-pvW">
-                            <rect key="frame" x="-70" y="1" width="320" height="157"/>
+                            <rect key="frame" x="-70" y="0.0" width="320" height="157"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="70"/>
                             <nil key="highlightedColor"/>

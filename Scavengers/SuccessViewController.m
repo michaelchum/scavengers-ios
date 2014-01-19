@@ -15,6 +15,8 @@
 
 @property (nonatomic, weak) LocationTracker *locationTracker;
 @property (weak, nonatomic) IBOutlet UILabel *pointsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *writtenLabel;
+
 
 @property (nonatomic, strong) NSNumber *points;
 
@@ -49,7 +51,8 @@
                                    action:@selector(navigateToMenu)];
     
     [self.view addGestureRecognizer:tap];
-    
+    self.pointsLabel.font = [UIFont fontWithName:@"Quake & Shake" size:40];
+    self.writtenLabel.font = [UIFont fontWithName:@"Quake & Shake" size:25];
     
 }
 
