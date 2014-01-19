@@ -104,9 +104,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view from its nib.
     self.win = FALSE;
     [self refreshFields];
+    self.instructionsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:20];
+    self.distanceFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:20];
+    self.unitsFromTarget.font = [UIFont fontWithName:@"Quake & Shake" size:20];
+    self.infoFromTarget.font = [UIFont fontWithName:@"Quake & Shake"];
     
 }
 
