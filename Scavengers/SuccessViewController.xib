@@ -29,7 +29,7 @@
         </view>
     </objects>
     <resources>
-        <image name="check_mark" width="300" height="278"/>
+        <image name="check_mark" width="150" height="139"/>
         <image name="success" width="180" height="24"/>
     </resources>
 </document>
