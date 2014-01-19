@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7D489FAF-370B-42C0-9921-0D2EA4BE240C</string>
+	<string>197DFE81-C2A5-450F-90BC-BFC341248244</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Scavengers</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>78DD3C93-FBAE-4D04-A05E-CAFAF8A789F5</key>
-		<string>https://github.com/michaelchum/scavengers-ios</string>
+		<key>F23463C7-FE5F-4841-B851-C2E707E967A4</key>
+		<string>https://github.com/michaelchum/scavengers-ios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Scavengers.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>78DD3C93-FBAE-4D04-A05E-CAFAF8A789F5</key>
+		<key>F23463C7-FE5F-4841-B851-C2E707E967A4</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/michaelchum/scavengers-ios</string>
+	<string>https://github.com/michaelchum/scavengers-ios.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>78DD3C93-FBAE-4D04-A05E-CAFAF8A789F5</string>
+	<string>F23463C7-FE5F-4841-B851-C2E707E967A4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>78DD3C93-FBAE-4D04-A05E-CAFAF8A789F5</string>
+			<string>F23463C7-FE5F-4841-B851-C2E707E967A4</string>
 			<key>IDESourceControlWCCName</key>
 			<string>scavengers-ios</string>
 		</dict>
