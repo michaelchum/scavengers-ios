@@ -29,7 +29,6 @@ typedef NSInteger ModeType;
 @property (nonatomic, assign) ModeType mode;
 
 @property (nonatomic, strong) CLLocationManager *locationManager;
-//@property (nonatomic, strong) NSMutableArray *locations;
 
 @property (nonatomic, strong) AFHTTPRequestOperationManager *reqManager;
 
@@ -49,7 +48,6 @@ typedef NSInteger ModeType;
         [_locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         
         _quizController = [[QuizViewController alloc] init];
-        _successController = [[SuccessViewController alloc] init];
         _huntController = [[HuntViewController alloc] init];
         
         _mode = ModeTypePick;
@@ -93,7 +91,7 @@ typedef NSInteger ModeType;
     
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-
+    
     [parameters setObject:[NSNumber numberWithDouble:location.coordinate.latitude] forKey:@"latitude"];
     [parameters setObject:[NSNumber numberWithDouble:location.coordinate.longitude] forKey:@"longitude"];
     
@@ -120,7 +118,6 @@ typedef NSInteger ModeType;
         [_menuController setPicks:picks];
     } else if ([type isEqualToString:@"DISTANCE"]) {
         if (_mode != ModeTypeHunt) {
-            
             [_menuController.navigationController pushViewController:_huntController animated:NO];
             _mode = ModeTypeHunt;
         }
@@ -132,10 +129,12 @@ typedef NSInteger ModeType;
         }
         
         if (_mode != ModeTypeQuiz) {
+            DLog(@"Pushing");
             [_menuController.navigationController pushViewController:_quizController animated:NO];
+            _mode = ModeTypeQuiz;
         }
         
-        _mode = ModeTypeQuiz;
+        
         
         NSString *text = [responseObject objectForKey:@"text"];
         NSString *imageUrl = [responseObject objectForKey:@"img"];
@@ -143,8 +142,8 @@ typedef NSInteger ModeType;
         [_quizController setQuestion:text imagePath:imageUrl];
         
     } else if ([type isEqualToString:@"WIN"]) {
-        BOOL correctAnswer = [((NSNumber *)[responseObject objectForKey:@"answer"]) boolValue];
-        [_menuController.navigationController pushViewController:_successController animated:NO];
+        [_menuController.navigationController popViewControllerAnimated:NO];
+        [_menuController.navigationController popViewControllerAnimated:NO];
     }
 }
 
@@ -154,7 +153,7 @@ typedef NSInteger ModeType;
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html", @"application/json", nil];
     
-
+    
     NSNumber *time = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
@@ -195,14 +194,58 @@ typedef NSInteger ModeType;
     NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/action"];
     
     [manager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        //[self locationManager:nil didUpdateLocations:nil];
+        NSNumber *correctAnswerNum = [responseObject objectForKey:@"answer"];
+        BOOL correctAnswer = YES;
+        
+        if (correctAnswerNum)
+            correctAnswer = [correctAnswerNum boolValue];
+        if (!correctAnswer) {
+            [self locationManager:nil didUpdateLocations:nil];
+            [_quizController wrongAnswer];
+            return;
+        }
+        
+        NSString *type = [responseObject objectForKey:@"type"];
+        if ([type isEqualToString:@"WIN"]) {
+            //            DLog(@"booya");
+            NSNumber *points = [responseObject objectForKey:@"points"];
+            [_successController setPoints:points];
+            [_menuController.navigationController popViewControllerAnimated:NO];
+            [_menuController.navigationController popViewControllerAnimated:NO];
+        }
+        
+        [self locationManager:nil didUpdateLocations:nil];
+        
         
         DLog(@"Here %@", responseObject);
+        //        [self handleResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        DLog(@"Failed with error: %@", error);
+    }];
+}
+
+- (void)skipQuestion
+{
+    NSNumber *time = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
+    
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    ;
+    
+    [parameters setObject:_username forKey:@"username"];
+    [parameters setObject:time forKey:@"time"];
+    [parameters setObject:@"SKIP" forKey:@"actionType"];
+    DLog(@"here w params %@", parameters);
+    
+    NSString *path = [NSString stringWithFormat:@"http://scavengers.herokuapp.com/action"];
+    [_reqManager GET:path parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self handleResponse:responseObject];
+        
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         DLog(@"Failed with error: %@", error);
     }];
     
 }
+
+
 
 @end

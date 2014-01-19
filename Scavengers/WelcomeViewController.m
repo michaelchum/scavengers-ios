@@ -51,8 +51,6 @@
         locationTracker.username = _username;
         [locationTracker playTracking];
         
-//        UINavigationController *navigation = [[UINavigationController alloc] initWithRootViewController:locationTracker.menuController];
-//        [del.window setRootViewController:navigation];
         if (locationTracker.successController == nil) {
             locationTracker.successController = [[SuccessViewController alloc] init];
         }

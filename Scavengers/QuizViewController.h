@@ -11,5 +11,6 @@
 @interface QuizViewController : UIViewController
 
 - (void)setQuestion:(NSString *)question imagePath:(NSString *)imagePath;
+- (void)wrongAnswer;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface SuccessViewController : UIViewController
 
+- (void)setPoints:(NSNumber *)number;
+
 @end

@@ -20,6 +20,7 @@
 @property (nonatomic, copy) NSString *questionText;
 @property (nonatomic, copy) NSString *imageUrl;
 
+@property (weak, nonatomic) IBOutlet UILabel *tryAgainLabel;
 @end
 
 @implementation QuizViewController
@@ -35,10 +36,19 @@
 
 - (void)refresh
 {
+    _answer.text = @"";
     _question.text = _questionText;
     NSURL *imageURL = [NSURL URLWithString:_imageUrl];
     DLog(@"text: %@", _questionText);
     [_image setImageWithURL:imageURL];
+    [self dismissKeyboard];
+}
+
+- (void)wrongAnswer
+{
+    DLog(@"wrongAnswer");
+    [_tryAgainLabel setHidden:NO];
+    
 }
 
 
@@ -64,7 +74,6 @@
     // Test Answer!
     
     
-    
     AppDelegate *del = [UIApplication sharedApplication].delegate;
     LocationTracker *locationTracker = del.locationTracker;
     [locationTracker answerQuestion:textField.text];
@@ -79,10 +88,19 @@
 
 - (void)setQuestion:(NSString *)question imagePath:(NSString *)imagePath
 {
+    [_tryAgainLabel setHidden:YES];
     DLog(@"Here");
     _questionText = question;
     _imageUrl = imagePath;
     [self refresh];
+}
+
+- (IBAction)skipQuestion:(id)sender
+{
+    AppDelegate *del = [UIApplication sharedApplication].delegate;
+    LocationTracker *locationTracker = del.locationTracker;
+    [locationTracker skipQuestion];
+    
 }
 
 

@@ -18,7 +18,7 @@
 
 - (void)answerQuestion:(NSString *)answer;
 
-
+- (void)skipQuestion;
 
 - (void)pickHunt:(NSString *)identifier;
 
