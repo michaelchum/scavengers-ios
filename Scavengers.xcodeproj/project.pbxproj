@@ -32,6 +32,7 @@
 		63626232188A7D1F004BC729 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626231188A7D1F004BC729 /* QuizViewController.xib */; };
 		63626237188AD280004BC729 /* SuccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 63626235188AD280004BC729 /* SuccessViewController.m */; };
 		63626238188AD280004BC729 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 63626236188AD280004BC729 /* SuccessViewController.xib */; };
+		7A1B0E73188BA1D50072E21D /* Quakev2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A1B0E71188BA0BD0072E21D /* Quakev2.ttf */; };
 		7A28899FE8EA483EBEB87FF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 317B5E9A94C546F5BE473E82 /* libPods.a */; };
 		7AD81E3E188AE5540032ACAB /* HuntViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD81E3C188AE5540032ACAB /* HuntViewController.m */; };
 		7AD81E3F188AE5540032ACAB /* HuntViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7AD81E3D188AE5540032ACAB /* HuntViewController.xib */; };
@@ -84,6 +85,7 @@
 		63626234188AD280004BC729 /* SuccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuccessViewController.h; sourceTree = "<group>"; };
 		63626235188AD280004BC729 /* SuccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuccessViewController.m; sourceTree = "<group>"; };
 		63626236188AD280004BC729 /* SuccessViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
+		7A1B0E71188BA0BD0072E21D /* Quakev2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Quakev2.ttf; sourceTree = "<group>"; };
 		7AD81E3B188AE5540032ACAB /* HuntViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuntViewController.h; sourceTree = "<group>"; };
 		7AD81E3C188AE5540032ACAB /* HuntViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuntViewController.m; sourceTree = "<group>"; };
 		7AD81E3D188AE5540032ACAB /* HuntViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HuntViewController.xib; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		635448BC188A2DA0006C6E06 /* Scavengers */ = {
 			isa = PBXGroup;
 			children = (
+				7A1B0E72188BA1BF0072E21D /* Fonts */,
 				635448C5188A2DA0006C6E06 /* AppDelegate.h */,
 				635448C6188A2DA0006C6E06 /* AppDelegate.m */,
 				7AD81E40188AE55C0032ACAB /* Hunt */,
@@ -257,6 +260,14 @@
 			name = Success;
 			sourceTree = "<group>";
 		};
+		7A1B0E72188BA1BF0072E21D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A1B0E71188BA0BD0072E21D /* Quakev2.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		7AD81E40188AE55C0032ACAB /* Hunt */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1B0E73188BA1D50072E21D /* Quakev2.ttf in Resources */,
 				635448C1188A2DA0006C6E06 /* InfoPlist.strings in Resources */,
 				63626238188AD280004BC729 /* SuccessViewController.xib in Resources */,
 				635448C9188A2DA0006C6E06 /* Images.xcassets in Resources */,
@@ -530,8 +542,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -548,8 +558,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AAA8321FDCDE4FD9B0252AD4 /* Pods.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/david/Documents/FacebookSDK,
