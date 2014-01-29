@@ -6,3 +6,5 @@ Real-time scavengers game using Google Maps geolocation API created during MHACK
 Frontend iOS: Michael Ho and David Cottrell
 
 Backend Node.js: Benjamin San Souci and Avery Schmavery
+
+Screenshots to come
